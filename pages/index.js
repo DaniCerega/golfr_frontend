@@ -6,6 +6,7 @@ import useScores from '../lib/useScores'
 const Home = () => {
   const { scores, error } = useScores()
 
+  console.log(scores)
   return (
     <Layout>
       <>
