@@ -8,15 +8,15 @@ export default function Golfer() {
   const { id } = router.query
   const { golferData, error } = useGolfers(id)
   let scores = null
-  let golfer_name = null
+  let golferName = null
   if (golferData) {
     scores = golferData.scores
-    golfer_name = golferData.name
+    golferName = golferData.name
   }
   return (
     <div>
       <Layout>
-        <h1>{golfer_name}</h1>
+        <h1>{golferName}</h1>
         <>
           {error ? (
             error
@@ -29,7 +29,7 @@ export default function Golfer() {
                   totalScore={score.total_score}
                   playedAt={score.played_at}
                   userId={score.user_id}
-                  userName={golfer_name}
+                  userName={golferName}
                 />
               ))}
             </>
